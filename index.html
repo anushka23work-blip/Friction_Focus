@@ -7,25 +7,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --deep-sea: #0a2540;
-    --deep-sea-mid: #0d3060;
-    --deep-sea-light: #1a4a7a;
-    --accent: #1e6fff;
-    --accent-glow: #3d8bff;
-    --accent-pale: rgba(30, 111, 255, 0.15);
-    --glass-bg: rgba(255,255,255,0.72);
-    --glass-border: rgba(255,255,255,0.55);
-    --glass-dark: rgba(10,37,64,0.08);
-    --text-primary: #0a2540;
-    --text-secondary: #4a6785;
+    --deep-sea: #020617;
+    --deep-sea-mid: #0f172a;
+    --deep-sea-light:#1e293b;
+    --accent:#6366f1;
+    --accent-glow: #818cf8;
+    --accent-pale: rgba(99,102,241,0.15);
+    --gold:  #d4af37;
+    --glass-bg: rgba(255,255,255,0.06);
+    --glass-border: rgba(255,255,255,0.12);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
     --text-muted: #8ea8c3;
     --danger: #e53e3e;
     --success: #0bbf7e;
     --warning: #f59e0b;
-    --bg-mesh: #eef4ff;
-    --shadow-card: 0 8px 32px rgba(10,37,64,0.10), 0 1.5px 6px rgba(10,37,64,0.06);
-    --shadow-glass: 0 4px 24px rgba(30,111,255,0.10), 0 1px 3px rgba(10,37,64,0.07);
-    --radius: 18px;
+    --bg-mesh: #020617;
+    --shadow-card: 0 10px 40px rgba(0,0,0,0.5), 0 1.5px 6px rgba(10,37,64,0.06);
+    --shadow-glass: 0 8px 30px rgba(30,111,255,0.10), 0 1px 3px rgba(10,37,64,0.07);
+    --radius: 20px;
     --radius-sm: 10px;
   }
 
@@ -46,11 +46,9 @@
     inset: 0;
     z-index: 0;
     background:
-      radial-gradient(ellipse 900px 600px at 10% 20%, rgba(30,111,255,0.10) 0%, transparent 70%),
-      radial-gradient(ellipse 700px 500px at 85% 70%, rgba(10,37,64,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 500px 400px at 50% 50%, rgba(30,111,255,0.04) 0%, transparent 80%),
-      linear-gradient(160deg, #eef4ff 0%, #f6f9ff 50%, #e8f0ff 100%);
-    pointer-events: none;
+      radial-gradient(circle at 20% 30%, rgba(99,102,241,0.15), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(212,175,55,0.10), transparent 40%),
+      linear-gradient(160deg, #020617 0%, #020617 100%);
   }
 
   section { position: relative; z-index: 1; }
@@ -64,179 +62,445 @@
     justify-content: space-between;
     padding: 0 2.5rem;
     height: 68px;
-    background: rgba(255,255,255,0.78);
+    background: rgba(2,6,23,0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--glass-border);
-    box-shadow: 0 2px 20px rgba(10,37,64,0.07);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
 
   .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo-wrap { width: 36px; height: 36px; background: var(--deep-sea); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(10,37,64,0.3); }
-  .nav-brand-text { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -0.5px; }
+  .nav-logo-wrap { width: 36px; height: 36px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .nav-brand-text { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 800; color: white; letter-spacing: -0.5px; }
   .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
   .nav-links a { text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
-  .nav-cta { background: var(--deep-sea); color: white !important; padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600 !important; transition: background 0.2s, box-shadow 0.2s !important; box-shadow: 0 2px 10px rgba(10,37,64,0.2); }
-  .nav-cta:hover { background: var(--accent) !important; box-shadow: 0 4px 16px rgba(30,111,255,0.35) !important; }
+  .nav-cta { background: var(--accent); color: white !important; padding: 0.5rem 1.2rem; border-radius: 8px; font-weight: 600 !important; }
 
-  #landing { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 6rem 2rem 4rem; text-align: center; }
-  .hero-eyebrow { display: inline-flex; align-items: center; gap: 6px; background: rgba(30,111,255,0.10); border: 1px solid rgba(30,111,255,0.2); border-radius: 100px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; color: var(--accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2rem; animation: fadeSlideUp 0.6s ease both; }
-  .hero-eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+  #landing {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+  }
 
-  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99,102,241,0.2);
+    border: 1px solid rgba(99,102,241,0.4);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeSlideUp 0.6s ease both;
+  }
+
   @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes spinRing { to { transform: rotate(360deg); } }
-  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.5; transform:scale(0.8); } }
 
-  .hero-logo-container { width: 140px; height: 140px; margin: 0 auto 2rem; position: relative; animation: fadeSlideUp 0.7s ease 0.1s both; }
-  .hero-logo-ring { position: absolute; inset: -8px; border-radius: 50%; background: conic-gradient(from 0deg, var(--accent), var(--deep-sea), var(--accent)); opacity: 0.25; animation: spinRing 6s linear infinite; }
-  .hero-logo-inner { position: relative; z-index: 1; width: 100%; height: 100%; background: var(--deep-sea); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 40px rgba(10,37,64,0.35), 0 0 0 8px rgba(30,111,255,0.08); }
-  .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; color: var(--deep-sea); line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.4rem; animation: fadeSlideUp 0.7s ease 0.2s both; }
-  .hero-title em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, #0049cc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); max-width: 560px; line-height: 1.7; margin: 0 auto 2.4rem; font-weight: 400; animation: fadeSlideUp 0.7s ease 0.3s both; }
-  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeSlideUp 0.7s ease 0.4s both; }
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 1.4rem;
+    animation: fadeSlideUp 0.7s ease 0.2s both;
+  }
 
-  .btn-primary { background: var(--deep-sea); color: white; padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem; text-decoration: none; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 20px rgba(10,37,64,0.25); transition: transform 0.2s, box-shadow 0.2s, background 0.2s; font-family: 'Space Grotesk', sans-serif; }
-  .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,111,255,0.35); }
-  .btn-glass { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); color: var(--deep-sea); padding: 0.85rem 2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem; text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow-glass); transition: transform 0.2s, box-shadow 0.2s; font-family: 'Space Grotesk', sans-serif; }
-  .btn-glass:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,111,255,0.15); }
+  .hero-title em {
+    font-style: normal;
+    background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 
-  .hero-stats { display: flex; gap: 3rem; justify-content: center; margin-top: 4rem; flex-wrap: wrap; animation: fadeSlideUp 0.7s ease 0.5s both; }
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    line-height: 1.7;
+    margin: 0 auto 2.4rem;
+    font-weight: 400;
+    animation: fadeSlideUp 0.7s ease 0.3s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeSlideUp 0.7s ease 0.4s both;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .btn-primary:hover { background: #818cf8; transform: translateY(-2px); }
+
+  .btn-glass {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    color: white;
+    padding: 0.85rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .btn-glass:hover { transform: translateY(-2px); background: rgba(255,255,255,0.2); }
+
+  .btn-logout {
+    background: rgba(229,62,62,0.8);
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-logout:hover { background: var(--danger); transform: translateY(-2px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    animation: fadeSlideUp 0.7s ease 0.5s both;
+  }
+
   .hero-stat { text-align: center; }
-  .hero-stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -1px; }
-  .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
+  .hero-stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; }
+  .hero-stat-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; }
 
-  #login { padding: 5rem 2rem; display: flex; flex-direction: column; align-items: center; }
-  .section-label { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
-  .section-title { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -1px; text-align: center; margin-bottom: 0.5rem; }
-  .section-sub { color: var(--text-secondary); font-size: 0.95rem; text-align: center; margin-bottom: 2.5rem; }
-  .auth-card { width: 100%; max-width: 440px; background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow-card); }
-  .auth-tabs { display: flex; gap: 4px; background: rgba(10,37,64,0.05); border-radius: 10px; padding: 4px; margin-bottom: 2rem; }
-  .auth-tab { flex: 1; padding: 0.55rem; border: none; border-radius: 8px; font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.2s; background: transparent; color: var(--text-secondary); }
-  .auth-tab.active { background: white; color: var(--deep-sea); box-shadow: 0 2px 8px rgba(10,37,64,0.10); }
+  #login {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .auth-tabs {
+    display: flex;
+    gap: 4px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 2rem;
+  }
+
+  .auth-tab {
+    flex: 1;
+    padding: 0.55rem;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    color: var(--text-secondary);
+  }
+
+  .auth-tab.active { background: var(--accent); color: white; }
+
   .form-group { margin-bottom: 1.2rem; }
-  .form-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem; letter-spacing: 0.01em; }
-  .form-input { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid rgba(10,37,64,0.12); border-radius: 10px; font-family: 'Space Grotesk', sans-serif; font-size: 0.92rem; background: rgba(255,255,255,0.7); color: var(--text-primary); transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
-  .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(30,111,255,0.1); background: white; }
+  .form-label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem; }
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.92rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.2); }
   .form-input::placeholder { color: var(--text-muted); }
-  .form-input-icon { position: relative; }
-  .form-input-icon .form-input { padding-left: 2.6rem; }
-  .form-input-icon svg { position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); width: 16px; height: 16px; }
-  .auth-role-badge { display: flex; align-items: center; gap: 8px; background: rgba(30,111,255,0.07); border: 1px solid rgba(30,111,255,0.18); border-radius: 8px; padding: 0.6rem 0.9rem; margin-bottom: 1.4rem; }
-  .role-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; }
+
+  .auth-role-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .role-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
   .auth-role-badge span { font-size: 0.82rem; font-weight: 600; color: var(--accent); }
 
-  #dashboard { padding: 5rem 2rem 2rem; }
-  .dashboard-header { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 1.4rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; box-shadow: var(--shadow-glass); margin-bottom: 2rem; }
+  #dashboard {
+    padding: 5rem 2rem 2rem;
+    display: none;
+  }
+
+  .dashboard-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 1.4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
   .dashboard-title-wrap { display: flex; align-items: center; gap: 12px; }
-  .dash-logo-wrap { width: 40px; height: 40px; background: var(--deep-sea); border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 12px rgba(10,37,64,0.3); flex-shrink: 0; }
-  .dashboard-title { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -0.5px; }
-  .dashboard-title span { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+  .dash-logo-wrap { width: 40px; height: 40px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+  .dashboard-title { font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800; color: white; letter-spacing: -0.5px; }
+  .dashboard-title span { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text-muted); }
 
-  .btn-extension { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--deep-sea) 0%, var(--deep-sea-light) 100%); color: white; padding: 0.7rem 1.4rem; border-radius: 10px; font-weight: 600; font-size: 0.88rem; text-decoration: none; border: none; cursor: pointer; font-family: 'Space Grotesk', sans-serif; box-shadow: 0 4px 16px rgba(10,37,64,0.25); transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap; }
-  .btn-extension:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(30,111,255,0.30); }
+  .btn-extension {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--accent) 0%, #818cf8 100%);
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-decoration: none;
+  }
 
-  .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-bottom: 2rem; }
-  .summary-card { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 1.6rem 1.8rem; box-shadow: var(--shadow-card); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
-  .summary-card:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(10,37,64,0.12); }
-  .summary-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; border-radius: 0 0 var(--radius) var(--radius); }
-  .card-online::after { background: linear-gradient(90deg, var(--accent), #0049cc); }
-  .card-domain::after { background: linear-gradient(90deg, #0bbf7e, #099966); }
-  .card-opens::after { background: linear-gradient(90deg, #f59e0b, #d97706); }
-  .card-friction::after { background: linear-gradient(90deg, #e53e3e, #c53030); }
-  .card-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.2rem; }
-  .card-icon-blue { background: rgba(30,111,255,0.12); color: var(--accent); }
-  .card-icon-green { background: rgba(11,191,126,0.12); color: var(--success); }
-  .card-icon-yellow { background: rgba(245,158,11,0.12); color: var(--warning); }
-  .card-icon-red { background: rgba(229,62,62,0.12); color: var(--danger); }
-  .card-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
-  .card-value { font-family: 'Syne', sans-serif; font-size: 2.1rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -1px; line-height: 1; margin-bottom: 0.3rem; }
-  .card-sub { font-size: 0.78rem; color: var(--text-muted); font-weight: 500; }
+  .btn-extension:hover { transform: translateY(-2px); }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .summary-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.8rem;
+    transition: transform 0.2s;
+  }
+
+  .summary-card:hover { transform: translateY(-3px); }
+
+  .card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .card-icon-blue { background: rgba(99,102,241,0.2); color: var(--accent); }
+  .card-icon-green { background: rgba(11,191,126,0.2); color: var(--success); }
+  .card-icon-yellow { background: rgba(245,158,11,0.2); color: var(--warning); }
+  .card-icon-red { background: rgba(229,62,62,0.2); color: var(--danger); }
+
+  .card-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .card-value { font-family: 'Syne', sans-serif; font-size: 2.1rem; font-weight: 800; color: white; letter-spacing: -1px; line-height: 1; margin-bottom: 0.3rem; }
+  .card-sub { font-size: 0.78rem; color: var(--text-muted); }
 
   .data-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem; }
-  .data-card { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow-card); overflow: hidden; }
-  .data-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.4rem; flex-wrap: wrap; gap: 0.8rem; }
-  .data-card-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--deep-sea); letter-spacing: -0.3px; display: flex; align-items: center; gap: 8px; }
-  .data-card-badge { display: inline-flex; align-items: center; background: rgba(30,111,255,0.1); color: var(--accent); font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 100px; letter-spacing: 0.04em; }
-  .table-wrap { overflow-x: auto; border-radius: 10px; }
-  table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.87rem; }
-  thead tr th { padding: 0.7rem 1rem; text-align: left; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); background: rgba(10,37,64,0.03); border-bottom: 1px solid rgba(10,37,64,0.08); white-space: nowrap; }
-  thead tr th:first-child { border-radius: 10px 0 0 0; }
-  thead tr th:last-child { border-radius: 0 10px 0 0; }
-  tbody tr { transition: background 0.15s; }
-  tbody tr:hover { background: rgba(30,111,255,0.04); }
-  tbody tr td { padding: 0.85rem 1rem; border-bottom: 1px solid rgba(10,37,64,0.05); color: var(--text-primary); font-weight: 500; vertical-align: middle; }
-  tbody tr:last-child td { border-bottom: none; }
+  .data-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+  }
+
+  .data-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.5rem; }
+  .data-card-title { font-weight: 700; color: white; font-size: 1rem; }
+
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th { text-align: left; padding: 0.6rem 0.8rem; color: var(--text-muted); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); }
+  td { padding: 0.75rem 0.8rem; color: var(--text-secondary); border-bottom: 1px solid rgba(255,255,255,0.04); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.03); }
+
   .url-cell { display: flex; align-items: center; gap: 8px; }
-  .site-favicon { width: 22px; height: 22px; border-radius: 5px; object-fit: cover; flex-shrink: 0; background: var(--deep-sea); display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; font-weight: 700; }
-  .url-text { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-secondary); }
-  .visits-pill { display: inline-flex; align-items: center; justify-content: center; background: rgba(30,111,255,0.08); color: var(--accent); border-radius: 6px; padding: 2px 8px; font-weight: 700; font-size: 0.82rem; }
+  .site-favicon { width: 28px; height: 28px; background: var(--accent-pale); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+  .url-text { color: white; font-weight: 500; }
+  .visits-pill { background: rgba(99,102,241,0.2); color: var(--accent); padding: 2px 10px; border-radius: 100px; font-size: 0.78rem; font-weight: 700; }
   .time-mono { font-family: 'DM Mono', monospace; font-size: 0.82rem; color: var(--text-secondary); }
   .timestamp-text { font-size: 0.78rem; color: var(--text-muted); }
-  .status-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
-  .status-blocked { background: rgba(229,62,62,0.1); color: var(--danger); }
-  .status-active { background: rgba(11,191,126,0.1); color: var(--success); }
-  .status-warning { background: rgba(245,158,11,0.1); color: var(--warning); }
-  .status-pill::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
 
-  .block-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
-  .block-module { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); border-radius: var(--radius); padding: 1.8rem; box-shadow: var(--shadow-card); }
-  .block-module-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.3rem; }
-  .block-module-title { display: flex; align-items: center; gap: 10px; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--deep-sea); }
-  .block-count-badge { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; letter-spacing: -1px; }
-  .count-red { color: var(--danger); }
-  .count-green { color: var(--success); }
-  .blocked-url-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .blocked-url-item { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0.9rem; background: rgba(229,62,62,0.05); border: 1px solid rgba(229,62,62,0.15); border-radius: 8px; gap: 0.5rem; }
-  .unblocked-url-item { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0.9rem; background: rgba(11,191,126,0.05); border: 1px solid rgba(11,191,126,0.15); border-radius: 8px; gap: 0.5rem; }
-  .blocked-url-text { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--danger); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .unblocked-url-text { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--success); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .block-reason { font-size: 0.68rem; color: var(--text-muted); white-space: nowrap; flex-shrink: 0; }
-  .unblock-method { font-size: 0.68rem; padding: 2px 7px; border-radius: 4px; font-weight: 600; flex-shrink: 0; }
-  .method-parent { background: rgba(30,111,255,0.1); color: var(--accent); }
-  .method-task { background: rgba(11,191,126,0.1); color: var(--success); }
+  .status-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; border-radius: 100px; font-size: 0.72rem; font-weight: 700; }
+  .status-blocked { background: rgba(229,62,62,0.2); color: var(--danger); }
+  .status-active { background: rgba(11,191,126,0.2); color: var(--success); }
+  .status-warning { background: rgba(245,158,11,0.2); color: var(--warning); }
+
   .progress-wrap { margin-top: 0.8rem; }
-  .progress-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.35rem; font-weight: 500; }
-  .progress-bar { height: 6px; background: rgba(10,37,64,0.08); border-radius: 100px; overflow: hidden; }
-  .progress-fill { height: 100%; border-radius: 100px; transition: width 1s ease; }
-  .fill-blue { background: linear-gradient(90deg, var(--accent), #0049cc); }
+  .progress-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+  .progress-bar { height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 100px; transition: width 0.8s ease; }
+  .fill-blue { background: linear-gradient(90deg, var(--accent), #818cf8); }
   .fill-red { background: linear-gradient(90deg, #e53e3e, #c53030); }
   .fill-green { background: linear-gradient(90deg, var(--success), #099966); }
 
-  footer { position: relative; z-index: 1; background: var(--deep-sea); color: rgba(255,255,255,0.6); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
+  .face-status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(245,158,11,0.15);
+    color: var(--warning);
+    align-self: center;
+    white-space: nowrap;
+  }
+
+  footer {
+    background: rgba(2,6,23,0.9);
+    color: rgba(255,255,255,0.6);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
   .footer-brand { display: flex; align-items: center; gap: 10px; }
-  .footer-logo { width: 30px; height: 30px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .footer-logo { width: 30px; height: 30px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 800; color: white; }
   .footer-brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 0.95rem; color: white; }
-  .footer-brand-sub { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.4); font-weight: 400; font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.04em; }
+  .footer-brand-sub { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.4); }
   .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
-  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
-  .footer-links a { text-decoration: none; color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 500; transition: color 0.2s; }
-  .footer-links a:hover { color: white; }
-  .section-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(10,37,64,0.1), transparent); margin: 1rem 0; }
-  .icon { width: 18px; height: 18px; display: inline-block; flex-shrink: 0; }
+
   .tab-content { display: none; }
   .tab-content.active { display: block; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   @media (max-width: 768px) {
     nav { padding: 0 1rem; }
     .nav-links { display: none; }
-    .hero-title { font-size: 2.2rem; letter-spacing: -1px; }
-    .dashboard-header { padding: 1rem; }
-    .dashboard-title { font-size: 1.1rem; }
-    .data-card { padding: 1.2rem; }
+    .hero-title { font-size: 2.2rem; }
     footer { flex-direction: column; text-align: center; }
   }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+<!-- face-api -->
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
 </head>
 <body>
 
 <nav>
   <a href="#landing" class="nav-brand">
-    <div class="nav-logo-wrap"><svg class="logo-svg" style="width:22px;height:22px;" viewBox="0 0 36 36" fill="none"><rect x="4" y="14" width="6" height="18" rx="3" fill="white"/><rect x="13" y="8" width="6" height="24" rx="3" fill="white" opacity="0.8"/><rect x="22" y="2" width="6" height="30" rx="3" fill="white" opacity="0.55"/><path d="M4 22 L10 16 L15 19 L22 10 L28 14" stroke="#3d8bff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+    <div class="nav-logo-wrap">
+      <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
+        <rect x="4" y="14" width="6" height="18" rx="3" fill="white"/>
+        <rect x="13" y="8" width="6" height="24" rx="3" fill="white" opacity="0.8"/>
+        <rect x="22" y="2" width="6" height="30" rx="3" fill="white" opacity="0.55"/>
+        <path d="M4 22 L10 16 L15 19 L22 10 L28 14" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+    </div>
     <span class="nav-brand-text">Friction Focus</span>
   </a>
   <ul class="nav-links">
@@ -244,42 +508,31 @@
     <li><a href="#login">Parent Gate</a></li>
     <li><a href="#dashboard">Dashboard</a></li>
     <li><a href="#footer">About</a></li>
-    <li><a href="#" class="nav-cta">Get Extension</a></li>
+    <li><a href="#" class="nav-cta" onclick="downloadExtension()">Get Extension</a></li>
   </ul>
 </nav>
 
+<!-- LANDING -->
 <section id="landing">
   <span class="hero-eyebrow">Powered by Scroll Brakers</span>
-  <div class="hero-logo-container">
-    <div class="hero-logo-ring"></div>
-    <div class="hero-logo-inner">
-      <svg viewBox="0 0 80 80" fill="none" style="width:72px;height:72px;">
-        <rect x="8" y="30" width="12" height="36" rx="6" fill="white"/>
-        <rect x="28" y="18" width="12" height="48" rx="6" fill="white" opacity="0.8"/>
-        <rect x="48" y="6" width="12" height="60" rx="6" fill="white" opacity="0.55"/>
-        <path d="M8 44 L20 32 L32 38 L48 20 L60 28" stroke="#3d8bff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="60" cy="28" r="5" fill="#3d8bff"/>
-      </svg>
-    </div>
-  </div>
   <h1 class="hero-title">Make <em>Distraction</em> Difficult.<br>Make Focus Natural.</h1>
   <p class="hero-subtitle">Friction Focus introduces intentional resistance between you and the digital habits that erode your time. Built for families who demand clarity, control, and calm.</p>
   <div class="hero-actions">
-    <a href="#" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Browser Extension</a>
-    <a href="#dashboard" class="btn-glass"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> View Dashboard</a>
+    <a href="#login" class="btn-primary">🔐 Parent Login</a>
+    <a href="#login" class="btn-glass">📊 View Dashboard</a>
   </div>
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-num">12K+</div><div class="hero-stat-label">Sites Tracked</div></div>
     <div class="hero-stat"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Friction Rate</div></div>
     <div class="hero-stat"><div class="hero-stat-num">2.4×</div><div class="hero-stat-label">Focus Boost</div></div>
-    <div class="hero-stat"><div class="hero-stat-num">3 min</div><div class="hero-stat-label">Setup Time</div></div>
   </div>
 </section>
 
+<!-- LOGIN -->
 <section id="login">
-  <div class="section-label"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure Parent Access</div>
+  <div class="section-label">🔐 Secure Parent Access</div>
   <h2 class="section-title">Parental Gate</h2>
-  <p class="section-sub">Manage restrictions, review usage reports, and override blocks.</p>
+  <p class="section-sub">Sign in to manage restrictions, review usage and control screen time.</p>
   <div class="auth-card">
     <div class="auth-role-badge"><div class="role-dot"></div><span>🛡 Parent / Guardian Role</span></div>
     <div class="auth-tabs">
@@ -287,183 +540,509 @@
       <button class="auth-tab" onclick="switchTab(this,'signup-form')">Create Account</button>
     </div>
     <div id="login-form" class="tab-content active">
-      <div class="form-group"><label class="form-label">Email Address</label><div class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><input class="form-input" type="email" placeholder="parent@family.com"></div></div>
-      <div class="form-group"><label class="form-label">PIN / Password</label><div class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><input class="form-input" type="password" placeholder="Enter your secure PIN"></div></div>
-      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:0.4rem;">Access Control Panel</button>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" id="loginEmail" placeholder="parent@family.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">PIN (6 digits)</label>
+        <input class="form-input" type="password" id="loginPassword" placeholder="••••••" maxlength="6">
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleParentLogin()">Access Control Panel</button>
       <p style="text-align:center;font-size:0.78rem;color:var(--text-muted);margin-top:1rem;">Forgot PIN? <a href="#" style="color:var(--accent);text-decoration:none;font-weight:600;">Reset via email</a></p>
     </div>
     <div id="signup-form" class="tab-content">
-      <div class="form-group"><label class="form-label">Full Name</label><div class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><input class="form-input" type="text" placeholder="Jane Smith"></div></div>
-      <div class="form-group"><label class="form-label">Email Address</label><div class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><input class="form-input" type="email" placeholder="parent@family.com"></div></div>
-      <div class="form-group"><label class="form-label">Create PIN (6 digits)</label><div class="form-input-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><input class="form-input" type="password" placeholder="••••••" maxlength="6"></div></div>
-      <button class="btn-primary" style="width:100%;justify-content:center;">Create Parent Account</button>
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input class="form-input" id="signupName" type="text" placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" id="signupEmail" type="email" placeholder="parent@family.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Create PIN (6 digits)</label>
+        <input class="form-input" id="signupPassword" type="password" placeholder="••••••" maxlength="6">
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;" onclick="handleParentSignup()">Create Parent Account</button>
     </div>
   </div>
 </section>
 
+<!-- DASHBOARD -->
 <section id="dashboard">
   <div class="dashboard-header">
     <div class="dashboard-title-wrap">
-      <div class="dash-logo-wrap"><svg viewBox="0 0 36 36" fill="none" style="width:22px;height:22px;"><rect x="4" y="14" width="6" height="18" rx="3" fill="white"/><rect x="13" y="8" width="6" height="24" rx="3" fill="white" opacity="0.8"/><rect x="22" y="2" width="6" height="30" rx="3" fill="white" opacity="0.55"/><path d="M4 22 L10 16 L15 19 L22 10 L28 14" stroke="#3d8bff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-      <div><div class="dashboard-title">Friction Focus Tracker</div><span>Powered by Scroll Brakers · Today, May 3 2026</span></div>
+      <div class="dash-logo-wrap">
+        <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="14" width="6" height="18" rx="3" fill="white"/>
+          <rect x="13" y="8" width="6" height="24" rx="3" fill="white" opacity="0.8"/>
+          <rect x="22" y="2" width="6" height="30" rx="3" fill="white" opacity="0.55"/>
+        </svg>
+      </div>
+      <div>
+        <div class="dashboard-title">Friction Focus Tracker</div>
+        <span id="dashboardUserSpan" style="font-size:0.72rem;color:var(--text-muted);">Welcome, Parent</span>
+      </div>
     </div>
-    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+    <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+      <button onclick="lockBrowser()" class="btn-extension" style="background:linear-gradient(135deg,#e53e3e,#c53030);">🔒 Lock</button>
+      <button onclick="resetTimer()" class="btn-extension" style="background:linear-gradient(135deg,#f59e0b,#d97706);">⏰ Reset</button>
+      <button onclick="directUnlock()" class="btn-extension" style="background:linear-gradient(135deg,#0bbf7e,#099966);">🔓 Unlock</button>
       <button onclick="openFaceModal('register')" class="btn-extension" style="background:linear-gradient(135deg,#0bbf7e,#099966);">📸 Register Face</button>
-      <button onclick="openFaceModal('unlock')" class="btn-extension" style="background:linear-gradient(135deg,#667eea,#764ba2);">🔓 Unlock with Face</button>
-      <a href="#" class="btn-extension"><svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Extension</a>
+      <button onclick="openFaceModal('verify')" class="btn-extension" style="background:linear-gradient(135deg,#6366f1,#818cf8);">🔐 Unlock with Face</button>
+      <a href="#" class="btn-extension" onclick="downloadExtension()" style="background:linear-gradient(135deg,#334155,#1e293b);">📥 Get Extension</a>
+      <button onclick="generateReport()" class="btn-extension" style="background:linear-gradient(135deg,#7c3aed,#4f46e5);">📄 Generate Report</button>
+      <button onclick="handleLogout()" class="btn-logout">🚪 Logout</button>
+      <span id="faceModelStatus" class="face-status-badge">⏳ Loading AI...</span>
     </div>
   </div>
 
   <div class="summary-grid">
-    <div class="summary-card card-online"><div class="card-icon card-icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="card-label">Total Time Online</div><div class="card-value">06:42</div><div class="card-sub">HH:MM — across all monitored sessions</div><div class="progress-wrap"><div class="progress-label"><span>Daily Limit</span><span>84%</span></div><div class="progress-bar"><div class="progress-fill fill-blue" style="width:84%"></div></div></div></div>
-    <div class="summary-card card-domain"><div class="card-icon card-icon-green"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="card-label">Most Visited Domain</div><div class="card-value" style="font-size:1.4rem;letter-spacing:-0.5px;">now.gg</div><div class="card-sub">87 visits · 2h 18m total time spent</div><div class="progress-wrap"><div class="progress-label"><span>Share of traffic</span><span>34%</span></div><div class="progress-bar"><div class="progress-fill fill-green" style="width:34%"></div></div></div></div>
-    <div class="summary-card card-opens"><div class="card-icon card-icon-yellow"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><div class="card-label">Total Daily Opens</div><div class="card-value">347</div><div class="card-sub">Combined count across all tracked sites</div><div class="progress-wrap"><div class="progress-label"><span>vs. yesterday (289)</span><span>+20%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div></div>
-    <div class="summary-card card-friction"><div class="card-icon card-icon-red"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="card-label">Friction Events</div><div class="card-value">41</div><div class="card-sub">Total blocks triggered today</div><div class="progress-wrap"><div class="progress-label"><span>Override rate</span><span>12%</span></div><div class="progress-bar"><div class="progress-fill fill-red" style="width:12%"></div></div></div></div>
+    <div class="summary-card">
+      <div class="card-icon card-icon-blue">⏱️</div>
+      <div class="card-label">Total Time Online</div>
+      <div class="card-value" id="totalTimeCard">--:--</div>
+      <div class="card-sub" id="totalTimeSub">Loading...</div>
+      <div class="progress-wrap"><div class="progress-label"><span>Daily Limit</span><span>84%</span></div><div class="progress-bar"><div class="progress-fill fill-blue" style="width:84%"></div></div></div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon card-icon-green">🌐</div>
+      <div class="card-label">Most Visited</div>
+      <div class="card-value" id="mostVisitedCard" style="font-size:1.4rem;">--</div>
+      <div class="card-sub" id="mostVisitedSub">Loading...</div>
+      <div class="progress-wrap"><div class="progress-label"><span>Share of traffic</span><span>34%</span></div><div class="progress-bar"><div class="progress-fill fill-green" style="width:34%"></div></div></div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon card-icon-yellow">🔒</div>
+      <div class="card-label">Browser Status</div>
+      <div class="card-value" id="lockStatusCard" style="font-size:1.4rem;">--</div>
+      <div class="card-sub" id="lockStatusSub">Loading from Firebase...</div>
+      <div class="progress-wrap"><div class="progress-label"><span>Engagement</span><span>60%</span></div><div class="progress-bar"><div class="progress-fill" style="width:60%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+    </div>
+    <div class="summary-card">
+      <div class="card-icon card-icon-red">⚠️</div>
+      <div class="card-label">Friction Events</div>
+      <div class="card-value">41</div>
+      <div class="card-sub">Blocks triggered today</div>
+      <div class="progress-wrap"><div class="progress-label"><span>Override rate</span><span>12%</span></div><div class="progress-bar"><div class="progress-fill fill-red" style="width:12%"></div></div></div>
+    </div>
   </div>
 
-  <div class="data-grid"><div class="data-card"><div class="data-card-header"><div class="data-card-title"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Cloud Gaming Usage Table <span class="data-card-badge">10 Sites Tracked</span></div><span class="status-pill status-active">Live Monitoring</span></div><div class="table-wrap"><table><thead><tr><th>Webpage URL</th><th>Visit Count</th><th>Time Spent</th><th>Last Visited</th><th>Status</th></tr></thead><tbody><tr><td><div class="url-cell"><div class="site-favicon">N</div><span class="url-text">now.gg</span></div></td><td><span class="visits-pill">87</span></td><td><span class="time-mono">02:18:44</span></td><td><span class="timestamp-text">Today, 4:32 PM</span></td><td><span class="status-pill status-blocked">Blocked</span></td></tr><tr><td><div class="url-cell"><div class="site-favicon">G</div><span class="url-text">play.geforcenow.com</span></div></td><td><span class="visits-pill">54</span></td><td><span class="time-mono">01:47:12</span></td><td><span class="timestamp-text">Today, 3:15 PM</span></td><td><span class="status-pill status-active">Active</span></td></tr><tr><td><div class="url-cell"><div class="site-favicon">X</div><span class="url-text">xbox.com/play</span></div></td><td><span class="visits-pill">41</span></td><td><span class="time-mono">01:22:05</span></td><td><span class="timestamp-text">Today, 2:58 PM</span></td><td><span class="status-pill status-warning">Warning</span></td></tr><tr><td><div class="url-cell"><div class="site-favicon">P</div><span class="url-text">poki.com</span></div></td><td><span class="visits-pill">36</span></td><td><span class="time-mono">01:04:30</span></td><td><span class="timestamp-text">Today, 2:10 PM</span></td><td><span class="status-pill status-blocked">Blocked</span></td></tr><tr><td><div class="url-cell"><div class="site-favicon">S</div><span class="url-text">stadia.google.com</span></div></td><td><span class="visits-pill">29</span></td><td><span class="time-mono">00:58:18</span></td><td><span class="timestamp-text">Today, 1:44 PM</span></td><td><span class="status-pill status-active">Active</span></td></tr></tbody></table></div></div></div>
-
-  <div class="block-grid">
-    <div class="block-module"><div class="block-module-header"><div class="block-module-title"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--danger)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg> Blocked URLs</div><span class="status-pill status-blocked">4 Restricted</span></div><div class="block-count-badge count-red">4</div><p style="font-size:0.8rem;color:var(--text-muted);margin:0.4rem 0 1rem;">URLs restricted because user exceeded daily time limit</p><ul class="blocked-url-list"><li class="blocked-url-item"><span class="blocked-url-text">now.gg</span><span class="block-reason">Limit exceeded</span></li><li class="blocked-url-item"><span class="blocked-url-text">poki.com</span><span class="block-reason">Limit exceeded</span></li><li class="blocked-url-item"><span class="blocked-url-text">boostergaming.com</span><span class="block-reason">Limit exceeded</span></li><li class="blocked-url-item"><span class="blocked-url-text">crazygames.com</span><span class="block-reason">Repeat offender</span></li></ul></div>
-    <div class="block-module"><div class="block-module-header"><div class="block-module-title"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg> Unblock Log</div><span class="status-pill status-active">5 Unlocked</span></div><div class="block-count-badge count-green">5</div><p style="font-size:0.8rem;color:var(--text-muted);margin:0.4rem 0 1rem;">URLs manually unblocked via parent override or focus task</p><ul class="blocked-url-list"><li class="unblocked-url-item"><span class="unblocked-url-text">play.geforcenow.com</span><span class="unblock-method method-parent">Parent</span></li><li class="unblocked-url-item"><span class="unblocked-url-text">luna.amazon.com</span><span class="unblock-method method-task">Task</span></li><li class="unblocked-url-item"><span class="unblocked-url-text">parsec.app</span><span class="unblock-method method-parent">Parent</span></li><li class="unblocked-url-item"><span class="unblocked-url-text">stadia.google.com</span><span class="unblock-method method-task">Task</span></li><li class="unblocked-url-item"><span class="unblocked-url-text">rainway.com</span><span class="unblock-method method-parent">Parent</span></li></ul></div>
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="data-card-header">
+        <div class="data-card-title">📊 Site Usage Analytics <span class="status-pill status-active" style="margin-left:8px;">🟢 Live</span></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Website</th><th>Visits</th><th>Last Visited</th><th>Status</th></tr></thead>
+          <tbody id="siteTableBody">
+            <tr><td colspan="4" style="text-align:center;color:var(--text-muted);">Loading from Firebase...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer id="footer">
-  <div class="footer-brand"><div class="footer-logo"><svg viewBox="0 0 36 36" fill="none" style="width:18px;height:18px;"><rect x="4" y="14" width="6" height="18" rx="3" fill="white" opacity="0.7"/><rect x="13" y="8" width="6" height="24" rx="3" fill="white" opacity="0.5"/><rect x="22" y="2" width="6" height="30" rx="3" fill="white" opacity="0.3"/></svg></div><div><div class="footer-brand-name">Friction Focus</div><span class="footer-brand-sub">Powered by Scroll Brakers</span></div></div>
+  <div class="footer-brand">
+    <div class="footer-logo">FF</div>
+    <div><div class="footer-brand-name">Friction Focus</div><span class="footer-brand-sub">Powered by Scroll Brakers</span></div>
+  </div>
   <div class="footer-copy">© 2026 Scroll Brakers. All rights reserved.</div>
-  <ul class="footer-links"><li><a href="#">Privacy Policy</a></li><li><a href="#">Support</a></li><li><a href="#">Terms</a></li></ul>
 </footer>
 
-<!-- FACE VERIFICATION MODAL (Inside Body) -->
-<div class="modal" id="faceVerifyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10000; align-items:center; justify-content:center; backdrop-filter:blur(8px);">
-  <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 40px; border-radius: 25px; text-align: center; max-width: 500px; width: 90%; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 60px rgba(0,0,0,0.5);">
-    <h2 style="color:white; margin-bottom:10px; font-family:'Syne',sans-serif; font-size:24px;">🔐 Face Verification</h2>
-    <p style="color:rgba(255,255,255,0.6); margin-bottom:20px;">Look directly at the camera</p>
-    <div style="width:100%; height:280px; background:#000; border-radius:15px; overflow:hidden; margin:20px 0; border:2px solid rgba(255,255,255,0.1);">
+<!-- FACE MODAL -->
+<div id="faceModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:10000; align-items:center; justify-content:center;">
+  <div style="background:linear-gradient(135deg,#1a1a2e,#16213e); padding:40px; border-radius:25px; text-align:center; max-width:500px; width:90%; border:1px solid rgba(99,102,241,0.3);">
+    <h2 style="color:white; margin-bottom:8px;" id="modalTitle">🔐 Face Verification</h2>
+    <p style="color:rgba(255,255,255,0.6); margin-bottom:20px; font-size:0.9rem;">Look directly at the camera</p>
+    <div style="width:100%; height:280px; background:#000; border-radius:15px; overflow:hidden; margin:16px 0; border:2px solid rgba(99,102,241,0.4);">
       <video id="faceVideo" autoplay muted playsinline style="width:100%;height:100%;object-fit:cover;"></video>
     </div>
-    <div id="faceSpinner" style="display:none; width:40px; height:40px; border:3px solid rgba(255,255,255,0.2); border-top-color:#667eea; border-radius:50%; animation:spin 0.8s linear infinite; margin:15px auto;"></div>
-    <p id="faceStatus" style="font-size:16px; font-weight:bold; margin:10px 0; min-height:24px; color:white;"></p>
-    <div style="display:flex; gap:10px; margin-top:15px;">
-      <button onclick="closeFaceModal()" class="btn-primary" style="background:rgba(255,255,255,0.1); flex:1;">Cancel</button>
-      <button id="faceActionBtn" onclick="handleFaceAction()" class="btn-primary" style="flex:1;">Verify Identity</button>
+    <div id="faceSpinner" style="display:none; width:40px; height:40px; border:3px solid rgba(255,255,255,0.2); border-top-color:#6366f1; border-radius:50%; animation:spin 0.8s linear infinite; margin:12px auto;"></div>
+    <p id="faceStatus" style="font-size:15px; margin:10px 0; color:white; min-height:22px; font-weight:600;"></p>
+    <div style="display:flex; gap:10px; margin-top:16px;">
+      <button onclick="closeFaceModal()" style="flex:1; background:rgba(255,255,255,0.1); color:white; padding:12px; border:1px solid rgba(255,255,255,0.2); border-radius:10px; cursor:pointer; font-family:'Space Grotesk',sans-serif; font-weight:600;">Cancel</button>
+      <button id="faceActionBtn" onclick="handleFaceAction()" style="flex:2; background:#6366f1; color:white; padding:12px; border:none; border-radius:10px; cursor:pointer; font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:0.95rem;">Verify Identity</button>
     </div>
   </div>
 </div>
 
 <script>
-  // Firebase Config (Replace with your actual config)
+  // ═══════════════════════════════════════════════
+  // FIREBASE CONFIG & INIT
+  // ═══════════════════════════════════════════════
   const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyDZ81tIoTuqwuXIfbOUqifznEFZjPzYpKU",
     authDomain: "avataar-alert.firebaseapp.com",
-    databaseURL: "https://avataar-alert-default-rtdb.firebaseio.com",
+    databaseURL: "https://avataar-alert01-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "avataar-alert",
-    storageBucket: "avataar-alert.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    storageBucket: "avataar-alert.firebasestorage.app",
+    messagingSenderId: "813908148516",
+    appId: "1:813908148516:web:6d58005d517333d22233b1"
   };
+
+  const USER_PATH = 'users/user1';
+  const FB_BASE = 'https://avataar-alert01-default-rtdb.asia-southeast1.firebasedatabase.app';
+  const FB_KEY  = 'AIzaSyDZ81tIoTuqwuXIfbOUqifznEFZjPzYpKU';
 
   let database;
   try {
     firebase.initializeApp(firebaseConfig);
     database = firebase.database();
-    console.log('✅ Firebase connected');
+    console.log('✅ Firebase SDK connected');
   } catch(e) {
-    console.log('Firebase not available:', e.message);
+    console.error('Firebase init error:', e.message);
   }
 
-  let faceDescriptor = null;
-  let faceStream = null;
-  let modelsLoaded = false;
-  let currentAction = 'verify';
+  // ── REST helpers for face (bypasses SDK issues) ──
+  async function fbFaceGet() {
+    const res = await fetch(`${FB_BASE}/${USER_PATH}/faceDescriptor.json?auth=${FB_KEY}`);
+    return await res.json();
+  }
+
+  async function fbFaceSet(arr) {
+    const res = await fetch(`${FB_BASE}/${USER_PATH}/faceDescriptor.json?auth=${FB_KEY}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(arr)
+    });
+    return await res.json();
+  }
+
+  // ═══════════════════════════════════════════════
+  // AUTH — LOGIN / SIGNUP / LOGOUT
+  // ═══════════════════════════════════════════════
+  function handleParentLogin() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pin   = document.getElementById('loginPassword').value.trim();
+
+    if (!email || !pin) { alert('❌ Please enter email and PIN'); return; }
+
+    database.ref(`${USER_PATH}/parentAccount`).once('value').then(snapshot => {
+      const account = snapshot.val();
+      if (account && account.email === email && account.pin === pin) {
+        document.getElementById('dashboardUserSpan').textContent = `Welcome, ${account.name}`;
+        showDashboard();
+      } else {
+        alert('❌ Invalid email or PIN. Create an account if you haven\'t yet.');
+      }
+    }).catch(e => alert('❌ Error: ' + e.message));
+  }
+
+  function handleParentSignup() {
+    const name  = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const pin   = document.getElementById('signupPassword').value.trim();
+
+    if (!name || !email || !pin) { alert('❌ Please fill all fields'); return; }
+    if (pin.length !== 6 || !/^\d+$/.test(pin)) { alert('❌ PIN must be exactly 6 digits'); return; }
+
+    database.ref(`${USER_PATH}/parentAccount`).once('value').then(snapshot => {
+      const account = snapshot.val();
+      if (account && account.email === email) {
+        alert('❌ Account already exists. Please sign in.'); return;
+      }
+      database.ref(`${USER_PATH}/parentAccount`).set({ name, email, pin, createdAt: Date.now() }).then(() => {
+        alert('✅ Account created! You can now sign in.');
+        switchTab(document.querySelectorAll('.auth-tab')[0], 'login-form');
+      }).catch(e => alert('❌ Failed to create account: ' + e.message));
+    });
+  }
+
+  function handleLogout() {
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('login').style.display = 'flex';
+    document.getElementById('landing').style.display = 'flex';
+    document.getElementById('loginEmail').value = '';
+    document.getElementById('loginPassword').value = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showDashboard() {
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('landing').style.display = 'none';
+    document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' });
+    loadFirebaseData();
+  }
+
+  // ═══════════════════════════════════════════════
+  // FIREBASE DATA — live listener
+  // ═══════════════════════════════════════════════
+  function loadFirebaseData() {
+    if (!database) return;
+    database.ref(USER_PATH).on('value', snapshot => {
+      const data = snapshot.val();
+      if (!data) return;
+
+      // Total time
+      if (data.totalTimeSpent !== undefined) {
+        const secs = Math.floor(data.totalTimeSpent / 1000);
+        const h = String(Math.floor(secs / 3600)).padStart(2,'0');
+        const m = String(Math.floor((secs % 3600) / 60)).padStart(2,'0');
+        document.getElementById('totalTimeCard').textContent = `${h}:${m}`;
+        document.getElementById('totalTimeSub').textContent = 'Today\'s screen time';
+      }
+
+      // Lock status
+      if (data.isLocked !== undefined) {
+        document.getElementById('lockStatusCard').textContent = data.isLocked ? '🔒 Locked' : '🔓 Open';
+        document.getElementById('lockStatusSub').textContent = data.isLocked ? 'Browser is locked' : 'Browser is active';
+      }
+
+      // Visited URLs table
+      if (data.visitedUrls) {
+        const urlEntries = Object.entries(data.visitedUrls);
+        const sorted = urlEntries.sort((a,b) => b[1].count - a[1].count).slice(0, 10);
+
+        // Most visited
+        if (sorted.length > 0) {
+          const [topKey, topVal] = sorted[0];
+          document.getElementById('mostVisitedCard').textContent = topKey.replace(/_/g,'.');
+          document.getElementById('mostVisitedSub').textContent = `${topVal.count} visits`;
+        }
+
+        const tbody = document.getElementById('siteTableBody');
+        tbody.innerHTML = sorted.map(([key, val]) => {
+          const domain = key.replace(/_/g, '.');
+          const lastSeen = val.lastVisit ? new Date(val.lastVisit).toLocaleString() : 'N/A';
+          return `<tr>
+            <td><div class="url-cell"><div class="site-favicon">${domain.charAt(0).toUpperCase()}</div><span class="url-text">${domain}</span></div></td>
+            <td><span class="visits-pill">${val.count}</span></td>
+            <td><span class="timestamp-text">${lastSeen}</span></td>
+            <td><span class="status-pill status-active">Tracked</span></td>
+          </tr>`;
+        }).join('');
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════════
+  // BROWSER COMMANDS
+  // ═══════════════════════════════════════════════
+  function sendCommand(type) {
+    if (database) {
+      database.ref(`${USER_PATH}/commands`).set({ type, timestamp: Date.now() });
+      console.log('✅ Command sent:', type);
+    }
+  }
+
+  function lockBrowser()   { sendCommand('lock');   alert('🔒 Browser locked!'); }
+  function resetTimer()    { sendCommand('reset');  alert('⏰ Timer reset!'); }
+  function directUnlock()  { sendCommand('unlock'); alert('🔓 Browser unlocked!'); }
+  function downloadExtension() { alert('📥 Go to chrome://extensions\nClick "Load unpacked"\nSelect your extension folder'); }
+
+  // ═══════════════════════════════════════════════
+  // FACE RECOGNITION — models from CDN, descriptor in Firebase REST
+  // ═══════════════════════════════════════════════
+  let faceDescriptor = null, faceStream = null, modelsLoaded = false, currentAction = 'verify';
 
   async function loadFaceModels() {
+    const badge = document.getElementById('faceModelStatus');
     try {
-      await faceapi.nets.tinyFaceDetector.loadFromUri('./models');
-      await faceapi.nets.faceLandmark68Net.loadFromUri('./models');
-      await faceapi.nets.faceRecognitionNet.loadFromUri('./models');
+      const MODEL_URL = 'https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model';
+      await faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL);
+      await faceapi.nets.faceLandmark68Net.loadFromUri(MODEL_URL);
+      await faceapi.nets.faceRecognitionNet.loadFromUri(MODEL_URL);
       modelsLoaded = true;
       console.log('✅ Face models loaded');
-      const stored = localStorage.getItem('registeredFace');
-      if (stored) {
-        faceDescriptor = new Float32Array(JSON.parse(stored));
-        console.log('✅ Saved face found');
+
+      // Try to load existing face from Firebase REST
+      const saved = await fbFaceGet();
+      if (saved && Array.isArray(saved)) {
+        faceDescriptor = new Float32Array(saved);
+        console.log('✅ Face descriptor loaded from Firebase');
+        if (badge) { badge.textContent = '✅ Face ready'; badge.style.color = '#0bbf7e'; badge.style.background = 'rgba(11,191,126,0.15)'; }
+      } else {
+        if (badge) { badge.textContent = '⚠️ Register face first'; badge.style.color = '#f59e0b'; }
       }
     } catch(e) {
-      console.error('❌ Model error:', e);
+      console.error('Face model error:', e);
+      if (badge) { badge.textContent = '❌ Model error'; badge.style.color = '#ff6b6b'; }
     }
   }
 
   async function startFaceCamera() {
+    const video = document.getElementById('faceVideo');
+    const status = document.getElementById('faceStatus');
+
+    // Try 1: Phone Link / any available camera (no constraints)
     try {
-      faceStream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480, facingMode: 'user' } });
-      const video = document.getElementById('faceVideo');
-      if (video) {
-        video.srcObject = faceStream;
-        await video.play();
-      }
-    } catch(e) {
-      console.error('Camera error:', e);
-      alert('Cannot access camera. Please allow camera permissions.');
+      faceStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      if (video) { video.srcObject = faceStream; await video.play(); }
+      console.log('✅ Camera started');
+      return;
+    } catch(e1) {
+      console.warn('Basic camera failed:', e1.message);
     }
+
+    // Try 2: front-facing camera with loose constraints
+    try {
+      faceStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' } });
+      if (video) { video.srcObject = faceStream; await video.play(); }
+      console.log('✅ Front camera started');
+      return;
+    } catch(e2) {
+      console.warn('Front camera failed:', e2.message);
+    }
+
+    // Try 3: list all video devices and pick first available
+    try {
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      const videoDevices = devices.filter(d => d.kind === 'videoinput');
+      console.log('📷 Available cameras:', videoDevices.map(d => d.label));
+
+      if (videoDevices.length === 0) {
+        if (status) { status.textContent = '❌ No camera found. Connect Phone Link or allow camera.'; status.style.color = '#ff6b6b'; }
+        return;
+      }
+
+      // Show camera picker if multiple cameras
+      if (videoDevices.length > 1) {
+        showCameraPicker(videoDevices);
+        return;
+      }
+
+      // Use the only available camera
+      faceStream = await navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: videoDevices[0].deviceId } } });
+      if (video) { video.srcObject = faceStream; await video.play(); }
+      console.log('✅ Camera started via deviceId:', videoDevices[0].label);
+    } catch(e3) {
+      console.error('All camera attempts failed:', e3.message);
+      if (status) { status.textContent = '❌ Camera error: ' + e3.message; status.style.color = '#ff6b6b'; }
+      alert('❌ Cannot access camera. Make sure:\n1. Camera permissions are allowed\n2. Phone Link is connected\n3. No other app is using the camera');
+    }
+  }
+
+  function showCameraPicker(devices) {
+    const status = document.getElementById('faceStatus');
+    const actionBtn = document.getElementById('faceActionBtn');
+
+    // Build picker UI inside modal
+    const picker = document.createElement('div');
+    picker.id = 'cameraPicker';
+    picker.style.cssText = 'margin:10px 0; display:flex; flex-direction:column; gap:8px;';
+
+    devices.forEach((device, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = '📷 ' + (device.label || 'Camera ' + (i+1));
+      btn.style.cssText = 'background:rgba(99,102,241,0.3); color:white; border:1px solid #6366f1; border-radius:8px; padding:8px 12px; cursor:pointer; font-family:Space Grotesk,sans-serif; font-size:0.85rem;';
+      btn.onclick = async () => {
+        picker.remove();
+        try {
+          faceStream = await navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: device.deviceId } } });
+          const video = document.getElementById('faceVideo');
+          if (video) { video.srcObject = faceStream; await video.play(); }
+          if (status) { status.textContent = '✅ Camera: ' + (device.label || 'Camera ' + (i+1)); status.style.color = '#0bbf7e'; }
+          actionBtn.disabled = false;
+        } catch(e) {
+          if (status) { status.textContent = '❌ Failed: ' + e.message; status.style.color = '#ff6b6b'; }
+        }
+      };
+      picker.appendChild(btn);
+    });
+
+    if (status) {
+      status.textContent = '📷 Select your camera:';
+      status.style.color = '#f59e0b';
+      status.after(picker);
+    }
+    actionBtn.disabled = true;
   }
 
   function stopFaceCamera() {
-    if (faceStream) {
-      faceStream.getTracks().forEach(t => t.stop());
-      faceStream = null;
-    }
+    if (faceStream) { faceStream.getTracks().forEach(t => t.stop()); faceStream = null; }
   }
 
   function openFaceModal(action) {
-    currentAction = action || 'verify';
-    document.getElementById('faceVerifyModal').style.display = 'flex';
-    document.getElementById('faceStatus').textContent = '';
-    document.getElementById('faceStatus').style.color = 'white';
-    const btn = document.getElementById('faceActionBtn');
-    if (!faceDescriptor || action === 'register') {
-      btn.textContent = '📸 Register Face';
+    currentAction = action;
+    const modal     = document.getElementById('faceModal');
+    const title     = document.getElementById('modalTitle');
+    const actionBtn = document.getElementById('faceActionBtn');
+    const status    = document.getElementById('faceStatus');
+
+    modal.style.display = 'flex';
+    status.textContent = '';
+
+    if (action === 'register') {
+      title.textContent = '📸 Register Your Face';
+      actionBtn.textContent = 'Register Face';
     } else {
-      btn.textContent = '✅ Verify Identity';
+      title.textContent = '🔐 Face Verification';
+      actionBtn.textContent = 'Verify Identity';
     }
+
+    if (!modelsLoaded) {
+      status.textContent = '⏳ AI models loading... please wait';
+      status.style.color = '#f59e0b';
+      actionBtn.disabled = true;
+      const wait = setInterval(() => {
+        if (modelsLoaded) {
+          clearInterval(wait);
+          actionBtn.disabled = false;
+          status.textContent = '✅ Ready! Click the button.';
+          status.style.color = '#0bbf7e';
+        }
+      }, 500);
+    }
+
     startFaceCamera();
   }
 
   function closeFaceModal() {
-    document.getElementById('faceVerifyModal').style.display = 'none';
-    document.getElementById('faceStatus').textContent = '';
+    document.getElementById('faceModal').style.display = 'none';
     stopFaceCamera();
   }
 
   async function handleFaceAction() {
-    if (!faceDescriptor || currentAction === 'register') {
-      await registerFace();
-    } else {
-      await verifyFace();
-    }
+    if (!modelsLoaded) { document.getElementById('faceStatus').textContent = '⏳ Still loading models...'; return; }
+    if (currentAction === 'register') await registerFace();
+    else await verifyFace();
   }
 
   async function registerFace() {
-    if (!modelsLoaded) { alert('Models still loading...'); return; }
-    const video = document.getElementById('faceVideo');
-    const status = document.getElementById('faceStatus');
+    const video   = document.getElementById('faceVideo');
+    const status  = document.getElementById('faceStatus');
     const spinner = document.getElementById('faceSpinner');
-    status.textContent = '🔍 Detecting face...';
+
+    status.textContent = '🔍 Detecting your face...';
+    status.style.color = 'white';
     spinner.style.display = 'block';
+
     try {
-      const detection = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions({ inputSize: 320, scoreThreshold: 0.5 })).withFaceLandmarks().withFaceDescriptor();
+      const detection = await faceapi
+        .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions({ inputSize:320, scoreThreshold:0.5 }))
+        .withFaceLandmarks()
+        .withFaceDescriptor();
+
       spinner.style.display = 'none';
+
       if (!detection) {
-        status.textContent = '❌ No face detected';
+        status.textContent = '❌ No face detected. Try better lighting.';
         status.style.color = '#ff6b6b';
         return;
       }
+
       faceDescriptor = detection.descriptor;
-      localStorage.setItem('registeredFace', JSON.stringify(Array.from(detection.descriptor)));
-      status.textContent = '✅ Face Registered Successfully!';
-      status.style.color = '#4ecdc4';
-      setTimeout(() => closeFaceModal(), 2000);
+      status.textContent = '💾 Saving to Firebase...';
+      status.style.color = '#f59e0b';
+
+      const result = await fbFaceSet(Array.from(detection.descriptor));
+
+      if (Array.isArray(result)) {
+        status.textContent = '✅ Face registered & saved to Firebase!';
+        status.style.color = '#0bbf7e';
+        const badge = document.getElementById('faceModelStatus');
+        if (badge) { badge.textContent = '✅ Face ready'; badge.style.color = '#0bbf7e'; badge.style.background = 'rgba(11,191,126,0.15)'; }
+        setTimeout(() => closeFaceModal(), 2000);
+      } else {
+        status.textContent = '❌ Firebase save failed: ' + JSON.stringify(result);
+        status.style.color = '#ff6b6b';
+      }
     } catch(e) {
       spinner.style.display = 'none';
       status.textContent = '❌ Error: ' + e.message;
@@ -472,32 +1051,55 @@
   }
 
   async function verifyFace() {
-    if (!modelsLoaded) { alert('Models still loading...'); return; }
-    if (!faceDescriptor) { alert('Register face first!'); return; }
-    const video = document.getElementById('faceVideo');
-    const status = document.getElementById('faceStatus');
+    const video   = document.getElementById('faceVideo');
+    const status  = document.getElementById('faceStatus');
     const spinner = document.getElementById('faceSpinner');
-    status.textContent = '🔍 Verifying...';
+
+    status.textContent = '⏳ Fetching registered face from Firebase...';
+    status.style.color = 'white';
     spinner.style.display = 'block';
+
     try {
-      const detection = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions({ inputSize: 320, scoreThreshold: 0.5 })).withFaceLandmarks().withFaceDescriptor();
-      spinner.style.display = 'none';
-      if (!detection) {
-        status.textContent = '❌ No face detected';
+      // Always fetch fresh from Firebase
+      const saved = await fbFaceGet();
+      if (!saved || !Array.isArray(saved)) {
+        spinner.style.display = 'none';
+        status.textContent = '❌ No face registered! Click 📸 Register Face first.';
         status.style.color = '#ff6b6b';
         return;
       }
+      faceDescriptor = new Float32Array(saved);
+
+      status.textContent = '🔍 Scanning your face...';
+
+      const detection = await faceapi
+        .detectSingleFace(video, new faceapi.TinyFaceDetectorOptions({ inputSize:320, scoreThreshold:0.5 }))
+        .withFaceLandmarks()
+        .withFaceDescriptor();
+
+      spinner.style.display = 'none';
+
+      if (!detection) {
+        status.textContent = '❌ No face detected. Look directly at camera.';
+        status.style.color = '#ff6b6b';
+        return;
+      }
+
       const distance = faceapi.euclideanDistance(detection.descriptor, faceDescriptor);
-      console.log('Match distance:', distance.toFixed(4));
-      if (distance < 0.6) {
-        status.textContent = '✅ Identity Verified!';
-        status.style.color = '#4ecdc4';
-        if (database && currentAction === 'unlock') {
-          database.ref('commands').set({ type: 'unlock', timestamp: Date.now() });
-        }
-        setTimeout(() => closeFaceModal(), 1500);
+      console.log('📏 Match distance:', distance.toFixed(4));
+
+      if (distance < 0.38) {
+        status.textContent = '✅ Identity Verified! Welcome.';
+        status.style.color = '#0bbf7e';
+        setTimeout(() => {
+          closeFaceModal();
+          showDashboard();
+        }, 1500);
+      } else if (distance < 0.50) {
+        status.textContent = `⚠️ Not sure – try again in better lighting (${distance.toFixed(3)})`;
+        status.style.color = '#f59e0b';
       } else {
-        status.textContent = '❌ Face Does Not Match';
+        status.textContent = `🚫 ACCESS DENIED – Wrong person! (${distance.toFixed(3)})`;
         status.style.color = '#ff6b6b';
       }
     } catch(e) {
@@ -507,36 +1109,9 @@
     }
   }
 
-  if (database) {
-    database.ref('stats').on('value', (snapshot) => {
-      const stats = snapshot.val();
-      if (stats) updateDashboardStats(stats);
-    });
-    database.ref('.info/connected').on('value', (snapshot) => {
-      const connected = snapshot.val() === true;
-      const statusEl = document.querySelector('.status-pill.status-active');
-      if (statusEl) statusEl.textContent = connected ? '🟢 Live Monitoring' : '🔴 Offline';
-    });
-  }
-
-  function updateDashboardStats(stats) {
-    const mins = Math.ceil((stats.totalTimeSpent || 0) / 60000);
-    const hrs = Math.floor(mins / 60);
-    const remainingMins = mins % 60;
-    const timeStr = `${hrs.toString().padStart(2,'0')}:${remainingMins.toString().padStart(2,'0')}`;
-    const timeEl = document.querySelector('.card-value');
-    if (timeEl) timeEl.textContent = timeStr;
-  }
-
-  function sendCommand(type) {
-    if (database) {
-      database.ref('commands').set({ type: type, timestamp: Date.now() });
-      console.log('Command sent:', type);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => { loadFaceModels(); });
-
+  // ═══════════════════════════════════════════════
+  // UI HELPERS
+  // ═══════════════════════════════════════════════
   function switchTab(btn, targetId) {
     btn.closest('.auth-tabs').querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
@@ -547,23 +1122,203 @@
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior:'smooth', block:'start' }); }
     });
   });
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.querySelectorAll('.progress-fill').forEach(bar => {
-          const w = bar.style.width;
-          bar.style.width = '0';
-          requestAnimationFrame(() => { setTimeout(() => { bar.style.width = w; }, 50); });
-        });
+  // ═══════════════════════════════════════════════
+  // INIT
+  // ═══════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', () => {
+    // Hide dashboard initially
+    document.getElementById('dashboard').style.display = 'none';
+    // Start loading face models in background immediately
+    loadFaceModels();
+  });
+  // ═══════════════════════════════════════════════
+  // GENERATE REPORT — PDF download + email via mailto
+  // ═══════════════════════════════════════════════
+  async function generateReport() {
+    const btn = document.querySelector('[onclick="generateReport()"]');
+    const origText = btn.textContent;
+    btn.textContent = '⏳ Generating...';
+    btn.disabled = true;
+
+    try {
+      // Fetch latest data from Firebase
+      const snapshot = await database.ref(USER_PATH).once('value');
+      const data = snapshot.val() || {};
+      const account = data.parentAccount || {};
+      const now = new Date();
+      const reportDate = now.toLocaleDateString('en-IN', { day:'2-digit', month:'long', year:'numeric' });
+      const reportTime = now.toLocaleTimeString('en-IN', { hour:'2-digit', minute:'2-digit' });
+
+      // Build visited URLs list
+      const urlEntries = data.visitedUrls ? Object.entries(data.visitedUrls) : [];
+      const sortedUrls = urlEntries.sort((a,b) => b[1].count - a[1].count);
+      const totalSites = sortedUrls.length;
+      const topSite = sortedUrls.length > 0 ? sortedUrls[0][0].replace(/_/g,'.') : 'N/A';
+      const topSiteVisits = sortedUrls.length > 0 ? sortedUrls[0][1].count : 0;
+
+      // Total time
+      const secs = Math.floor((data.totalTimeSpent || 0) / 1000);
+      const h = String(Math.floor(secs / 3600)).padStart(2,'0');
+      const m = String(Math.floor((secs % 3600) / 60)).padStart(2,'0');
+      const timeStr = `${h}h ${m}m`;
+
+      // ── Build PDF ──
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+      const pageW = doc.internal.pageSize.getWidth();
+
+      // Header background
+      doc.setFillColor(6, 14, 41);
+      doc.rect(0, 0, pageW, 45, 'F');
+
+      // Title
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(22);
+      doc.setTextColor(255, 255, 255);
+      doc.text('Friction Focus', 15, 18);
+
+      doc.setFontSize(11);
+      doc.setTextColor(180, 190, 220);
+      doc.text('Child Activity Report — Powered by Scroll Brakers', 15, 27);
+
+      doc.setFontSize(9);
+      doc.setTextColor(140, 160, 195);
+      doc.text(`Generated: ${reportDate} at ${reportTime}`, 15, 36);
+      doc.text(`Parent: ${account.name || 'N/A'} | ${account.email || 'N/A'}`, 15, 42);
+
+      // Accent line
+      doc.setDrawColor(99, 102, 241);
+      doc.setLineWidth(1.5);
+      doc.line(0, 45, pageW, 45);
+
+      let y = 58;
+
+      // ── Summary Cards ──
+      doc.setFontSize(13);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(30, 30, 60);
+      doc.text('📊 Summary', 15, y);
+      y += 8;
+
+      const cards = [
+        { label: 'Total Time Online', value: timeStr, color: [99,102,241] },
+        { label: 'Most Visited Site', value: topSite, color: [11,191,126] },
+        { label: 'Sites Tracked', value: String(totalSites), color: [245,158,11] },
+        { label: 'Browser Status', value: data.isLocked ? 'Locked' : 'Active', color: data.isLocked ? [229,62,62] : [11,191,126] },
+      ];
+
+      const cardW = (pageW - 30 - 12) / 4;
+      cards.forEach((card, i) => {
+        const x = 15 + i * (cardW + 4);
+        doc.setFillColor(245, 247, 255);
+        doc.roundedRect(x, y, cardW, 22, 3, 3, 'F');
+        doc.setDrawColor(...card.color);
+        doc.setLineWidth(0.8);
+        doc.roundedRect(x, y, cardW, 22, 3, 3, 'S');
+        doc.setFontSize(7);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(100, 110, 140);
+        doc.text(card.label.toUpperCase(), x + 3, y + 7);
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(...card.color);
+        doc.text(card.value, x + 3, y + 17);
+      });
+
+      y += 32;
+
+      // ── Visited Sites Table ──
+      doc.setFontSize(13);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(30, 30, 60);
+      doc.text('🌐 Visited Sites Breakdown', 15, y);
+      y += 6;
+
+      const tableRows = sortedUrls.map(([key, val], idx) => {
+        const domain = key.replace(/_/g, '.');
+        const lastVisit = val.lastVisit ? new Date(val.lastVisit).toLocaleString('en-IN') : 'N/A';
+        const firstVisit = val.firstVisit ? new Date(val.firstVisit).toLocaleString('en-IN') : 'N/A';
+        return [idx + 1, domain, val.count, firstVisit, lastVisit];
+      });
+
+      doc.autoTable({
+        startY: y,
+        head: [['#', 'Website', 'Visits', 'First Visit', 'Last Visit']],
+        body: tableRows.length > 0 ? tableRows : [['-', 'No data yet', '-', '-', '-']],
+        styles: {
+          fontSize: 8.5,
+          cellPadding: 3,
+          font: 'helvetica',
+          textColor: [30, 40, 60],
+        },
+        headStyles: {
+          fillColor: [6, 14, 41],
+          textColor: [255, 255, 255],
+          fontStyle: 'bold',
+          fontSize: 9,
+        },
+        alternateRowStyles: { fillColor: [245, 247, 255] },
+        columnStyles: {
+          0: { cellWidth: 8, halign: 'center' },
+          1: { cellWidth: 55 },
+          2: { cellWidth: 15, halign: 'center' },
+          3: { cellWidth: 47 },
+          4: { cellWidth: 47 },
+        },
+        margin: { left: 15, right: 15 },
+        theme: 'grid',
+      });
+
+      // ── Footer on last page ──
+      const finalY = doc.lastAutoTable ? doc.lastAutoTable.finalY + 10 : y + 60;
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(150, 160, 180);
+      doc.text('This report was automatically generated by Friction Focus — Scroll Brakers © 2026', 15, finalY);
+      doc.setDrawColor(200, 210, 230);
+      doc.setLineWidth(0.3);
+      doc.line(15, finalY - 4, pageW - 15, finalY - 4);
+
+      // ── Download PDF ──
+      const fileName = `FrictionFocus_Report_${now.toISOString().slice(0,10)}.pdf`;
+      doc.save(fileName);
+      console.log('✅ PDF downloaded:', fileName);
+
+      // ── Send email via mailto ──
+      const parentEmail = account.email || '';
+      if (parentEmail) {
+        const subject = encodeURIComponent(`Friction Focus Report — ${reportDate}`);
+        const top5 = sortedUrls.slice(0,5).map(([k,v], i) => (i+1) + '. ' + k.replace(/_/g,'.') + ' — ' + v.count + ' visits').join('\n');
+        const emailBody = 'Hi ' + (account.name || 'Parent') + ',\n\n' +
+          'Your Friction Focus child activity report for ' + reportDate + ' is ready.\n\n' +
+          'SUMMARY:\n' +
+          '• Total Time Online: ' + timeStr + '\n' +
+          '• Most Visited Site: ' + topSite + ' (' + topSiteVisits + ' visits)\n' +
+          '• Total Sites Tracked: ' + totalSites + '\n' +
+          '• Browser Status: ' + (data.isLocked ? 'Locked' : 'Active') + '\n\n' +
+          'TOP 5 VISITED SITES:\n' + top5 + '\n\n' +
+          'The full PDF report has been downloaded to your device.\n\n' +
+          '— Friction Focus | Powered by Scroll Brakers';
+        const body = encodeURIComponent(emailBody);
+        window.open('mailto:' + parentEmail + '?subject=' + subject + '&body=' + body, '_blank');
+        alert('✅ PDF downloaded!\n\nYour email client has opened with a pre-filled report for:\n' + parentEmail + '\n\nAttach the downloaded PDF and send.');
+      } else {
+        alert('✅ PDF downloaded successfully!\n\nNo email found — please log in first to send via email.');
       }
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.summary-card').forEach(c => observer.observe(c));
+
+    } catch(e) {
+      console.error('Report error:', e);
+      alert('❌ Failed to generate report: ' + e.message);
+    } finally {
+      btn.textContent = origText;
+      btn.disabled = false;
+    }
+  }
+
 </script>
 </body>
 </html>
-
