@@ -1,12 +1,3 @@
-The issue is that your HTML buttons for face recognition were accidentally placed **inside the CSS `.btn-extension` definition**, which breaks everything. Also, the face modal must be **inside the `<body>`** and the spinner animation style must be in the `<head>`.
-
-Here is the **fully corrected, complete file**. I've fixed:
-1.  Removed the buttons from the CSS section.
-2.  Added the face buttons properly in the dashboard header.
-3.  Moved the modal inside the body and the spinner style to the head.
-4.  Included the missing model file manifest.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -575,5 +566,4 @@ Here is the **fully corrected, complete file**. I've fixed:
 </script>
 </body>
 </html>
-```
 
