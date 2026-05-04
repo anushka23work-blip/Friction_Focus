@@ -352,3 +352,5 @@ Email client opens pre-filled — attach the PDF and send
 Friction Focus
 Powered by Scroll Brakers  ·  © 2026 All rights reserved
 https://avataar-alert01.web.app
+
+
